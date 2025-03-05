@@ -116,11 +116,14 @@ public final class ProofOfConcept {
     public Double currentSpent() {
 
         double spent = 0;
+        Map<String, Double> test = this.budget.newInstance();
         while (this.budget.size() != 0) {
             Map.Pair<String, Double> removed = this.budget.removeAny();
             double price = removed.value();
             spent += price;
+            test.add(removed.key(), removed.value());
         }
+        this.budget.transferFrom(test);
         return spent;
     }
 
@@ -153,37 +156,43 @@ public final class ProofOfConcept {
         String amazon = "amazon";
         final Double amazonPrice = 100.00;
         budget.addTransaction(amazon, amazonPrice);
+        out.println();
         out.println("This is the state of bugdet when things are added");
         out.println(budget);
+        out.println();
 
         String removed = budget.removeTransaction(rent);
         out.println("This component was manually removed");
         out.println(removed);
+        out.println();
         out.println("This is the state of bugdet when item removed");
         out.println(budget);
+        out.println();
 
         int size = budget.budgetSize();
         out.println("This is the size of the budget");
         out.println(size);
+        out.println();
 
         boolean check = budget.hasTransaction(rent);
-        out.println("This is returning hasTransaction");
+        out.println("This is returning hasTransaction(rent)");
         out.println(check);
+        out.println();
 
         final Double checkPrice = budget.checkPrice(amazon);
         out.println("Returning price of specific transaction");
         out.println(checkPrice);
+        out.println();
 
         final Double totalSpent = budget.currentSpent();
         out.println("This the total amount spent so far");
         out.println(totalSpent);
+        out.println();
 
         Map.Pair<String, Double> random = budget.randomRemove();
         out.println("This is the random compoenent removed");
         out.println(random);
-
-        out.println("This component was manually removed");
-        out.println(removed);
+        out.println();
 
         out.close();
         in.close();
