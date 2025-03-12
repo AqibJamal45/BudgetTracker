@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Aqib Jamal.45
+- **Dot Number**: jamal.45
+- **Due Date**: As soon as possible
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,23 +98,16 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+My interests are few, I like to play cricket and just live my normal life
+and progress in my career. My career goal is to work in a tech or in the automotiv industry.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -131,8 +116,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +183,85 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: CricketScore
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This helps keep track of the score when playing cricket
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addPlayer (String team, String playerName)
+    - String removePlayer (String team, String playerName)
+    - void addStats (String team, String playerName, int[] stats)
+    - int[] removeStats (String team, String playerName)
+    - boolean hasTeam(String team)
+    - boolean hasPlayer(String team, String playerName)
+    - int size(String team): returns size of team
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - intBalls(team)
+    - void updateStats(String team, String player, int[] stats)
+    - intOversDone(team)
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes it needs to be to mutable because the object values need to be changed for the scores to update
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes this could very well need map.pair and other classes might be required as well.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No this probably won't need such constants
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - With the compoenets i have so far I dont think this will be needed, but if I do make adjustments to the methods then this might be required
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: StudyPlanner
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This helps you set a planner of when to start studying and when assignments are due
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - Map<String, integer> addEvent(): adds and event to this
+    - Map<String, integer> removeEvent(): removes an event from this
+    - int size : returns the size of the planner of how many events
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - Event getNextEvent(): returns the next closest event
+    - Date getStartDate(): predicts when you should start studying based on event calendar
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes it needs to be due dates can be changed
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yeah classes like map.pair might be required
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - with the methods that I have so far defiently not
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No it will not be required for this component.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: TrackBudget
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Helps you track your Monthly Budget.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addTransaction(String expense, Double cost): Adds a an expense to this
+    - Double removeTransaction(String expense): removes an expense from this
+    - String removeAny():
+    - int numberOfTransactions: returns the number of expenses
+    - boolean hasTrasnaction(String expense);
+    - double checkPrice(String expense);
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - double currentSpent: returns the current money spent in your monthly budget
+    - int salary: returns your income yearly
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes since your bidget might change due to salary change etc.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes this would probably have to rely on something like map.pair
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This will probably not require anything like that
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Probably not because kernal methods will not be needed to be impleemnted into secondary methods.
 
 ## Post-Assignment
 
@@ -292,12 +292,12 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a CricketScore component
+- Designed a StudyPlanner component
+- Designed a TrackBugdet component
 ```
 
-Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
+Here `2025.02.2025` would be the date of your submission, such as 2024.04.21.
 
 You may notice that things are nicely linked in the root CHANGELOG. If you'd
 like to accomplish that, you will need to make GitHub releases after each pull
