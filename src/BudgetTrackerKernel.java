@@ -4,7 +4,7 @@ import components.standard.Standard;
 /**
  *
  */
-interface BudgetTrackerKernel extends Standard<Map<String, Double>> {
+interface BudgetTrackerKernel extends Standard<BudgetTracker> {
 
     /**
      * Adds a transaction to the bugdet with the expense name and price.

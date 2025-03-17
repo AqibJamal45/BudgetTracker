@@ -1,7 +1,7 @@
 /**
  *
  */
-interface BudgetTrackerSecondary extends BudgetTrackerKernel {
+interface BudgetTracker extends BudgetTrackerKernel {
 
     /**
      * Returns the total money spent in the budget.
