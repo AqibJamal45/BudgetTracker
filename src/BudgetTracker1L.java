@@ -1,9 +1,5 @@
 import components.map.Map;
 import components.map.Map1L;
-import components.simplereader.SimpleReader;
-import components.simplereader.SimpleReader1L;
-import components.simplewriter.SimpleWriter;
-import components.simplewriter.SimpleWriter1L;
 
 /**
  * Create a component to track monthly expenses.
@@ -11,7 +7,7 @@ import components.simplewriter.SimpleWriter1L;
  * @author Aqib Jamal
  *
  */
-public final class ProofOfConcept {
+public final class BudgetTracker1L extends BudgetTrackerSecondary {
     /**
      * Representation of {@code this}.
      */
@@ -19,8 +15,52 @@ public final class ProofOfConcept {
 
     /**
      */
-    public ProofOfConcept() {
+    public BudgetTracker1L() {
         this.budget = new Map1L<String, Double>();
+    }
+
+    /**
+     * the is creating a new rep.
+     */
+    public void createNewRep() {
+        this.budget = new Map1L<String, Double>();
+    }
+
+    /**
+     * clears the BudgetTracker.
+     */
+    @Override
+    public void clear() {
+
+        while (this.budget.size() != 0) {
+            this.budget.removeAny();
+        }
+    }
+
+    /**
+     * @return a new BudgetTracker object
+     */
+    @Override
+    public BudgetTracker newInstance() {
+        try {
+            return this.getClass().getConstructor().newInstance();
+        } catch (ReflectiveOperationException e) {
+            throw new AssertionError(
+                    "cannot construct object of type" + this.getClass());
+        }
+    }
+
+    /**
+     * Transfer from one budget tracker to another.
+     *
+     * @param source
+     * @updates this
+     */
+    @Override
+    public void transferFrom(BudgetTracker source) {
+        BudgetTracker1L localSource = (BudgetTracker1L) source;
+        this.budget = localSource.budget;
+        localSource.createNewRep();
     }
 
     /**
@@ -31,6 +71,7 @@ public final class ProofOfConcept {
      * @param expense
      *            the name of the item
      */
+    @Override
     public void addTransaction(String expense, Double price) {
         this.budget.add(expense, price);
     }
@@ -43,6 +84,7 @@ public final class ProofOfConcept {
      *
      * @return expense that is removed
      */
+    @Override
     public String removeTransaction(String expense) {
 
         this.budget.remove(expense);
@@ -54,6 +96,7 @@ public final class ProofOfConcept {
      *
      * @return size of the budget
      */
+    @Override
     public int budgetSize() {
 
         int size = this.budget.size();
@@ -68,6 +111,7 @@ public final class ProofOfConcept {
      *
      * @return boolean check
      */
+    @Override
     public boolean hasTransaction(String expense) {
 
         boolean check = false;
@@ -82,6 +126,7 @@ public final class ProofOfConcept {
      *
      * @return a random expense from the bugdet
      */
+    @Override
     public Map.Pair<String, Double> randomRemove() {
 
         return this.budget.removeAny();
@@ -95,6 +140,7 @@ public final class ProofOfConcept {
      *
      * @return a random expense from the bugdet
      */
+    @Override
     public Double checkPrice(String expense) {
 
         double price = 0;
@@ -113,6 +159,7 @@ public final class ProofOfConcept {
      *
      * @return the total money spent in the budget
      */
+    @Override
     public Double currentSpent() {
 
         double spent = 0;
@@ -130,71 +177,5 @@ public final class ProofOfConcept {
     @Override
     public String toString() {
         return this.budget.toString();
-    }
-
-    /**
-     * Main Method.
-     *
-     * @param args
-     *
-     */
-    public static void main(String[] args) {
-        SimpleWriter out = new SimpleWriter1L();
-        SimpleReader in = new SimpleReader1L();
-
-        ProofOfConcept budget = new ProofOfConcept();
-
-        String rent = "rent";
-        final Double rentPrice = 1500.00;
-        budget.addTransaction(rent, rentPrice);
-        String utilities = "utilities";
-        final Double utilitiesPrice = 300.00;
-        budget.addTransaction(utilities, utilitiesPrice);
-        String groceries = "groceries";
-        final Double groceriesPrice = 500.00;
-        budget.addTransaction(groceries, groceriesPrice);
-        String amazon = "amazon";
-        final Double amazonPrice = 100.00;
-        budget.addTransaction(amazon, amazonPrice);
-        out.println();
-        out.println("This is the state of bugdet when things are added");
-        out.println(budget);
-        out.println();
-
-        String removed = budget.removeTransaction(rent);
-        out.println("This component was manually removed");
-        out.println(removed);
-        out.println();
-        out.println("This is the state of bugdet when item removed");
-        out.println(budget);
-        out.println();
-
-        int size = budget.budgetSize();
-        out.println("This is the size of the budget");
-        out.println(size);
-        out.println();
-
-        boolean check = budget.hasTransaction(rent);
-        out.println("This is returning hasTransaction(rent)");
-        out.println(check);
-        out.println();
-
-        final Double checkPrice = budget.checkPrice(amazon);
-        out.println("Returning price of specific transaction");
-        out.println(checkPrice);
-        out.println();
-
-        final Double totalSpent = budget.currentSpent();
-        out.println("This the total amount spent so far");
-        out.println(totalSpent);
-        out.println();
-
-        Map.Pair<String, Double> random = budget.randomRemove();
-        out.println("This is the random compoenent removed");
-        out.println(random);
-        out.println();
-
-        out.close();
-        in.close();
     }
 }
