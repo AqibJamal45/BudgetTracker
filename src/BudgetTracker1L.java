@@ -32,9 +32,7 @@ public final class BudgetTracker1L extends BudgetTrackerSecondary {
     @Override
     public void clear() {
 
-        while (this.budget.size() != 0) {
-            this.budget.removeAny();
-        }
+        this.createNewRep();
     }
 
     /**
