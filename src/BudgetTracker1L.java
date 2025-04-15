@@ -4,6 +4,11 @@ import components.map.Map1L;
 /**
  * Create a component to track monthly expenses.
  *
+ * @convention no duplicates are allowed in the to do list
+ *
+ * @correspondance the BudgetTracker is a Map (transaction, price of
+ *                 transaction) and it has no order.
+ *
  * @author Aqib Jamal
  *
  */
