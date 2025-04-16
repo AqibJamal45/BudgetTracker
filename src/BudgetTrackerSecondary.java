@@ -67,7 +67,6 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
         BudgetTracker test = (BudgetTracker) o;
 
         boolean check = true;
-        BudgetTracker copy = this.newInstance();
         while (test.budgetSize() != 0) {
             Map.Pair<String, Double> removed1 = this.randomRemove();
             Map.Pair<String, Double> removed2 = test.randomRemove();
@@ -79,7 +78,6 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
             }
             this.addTransaction(removed1.key(), removed1.value());
             test.addTransaction(removed2.key(), removed2.value());
-
         }
         return check;
     }
