@@ -1,5 +1,5 @@
 /**
- *
+ * This holds the secondary methods of the BudgetTraceker compoenent.
  */
 interface BudgetTracker extends BudgetTrackerKernel {
 

@@ -36,6 +36,17 @@ the following form: YYYY.0M.0D.
 
 - Completion of diagram and component interfaces for kernal and secondary
 
+### Added
+
+## [2025.04.01]
+
+- Completion of abstract class
+
+## [2025.04.17]
+
+- completion of abstract class and finishing up the testing
+- Completed reflection of the project
+
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07

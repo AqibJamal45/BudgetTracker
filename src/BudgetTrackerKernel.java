@@ -2,7 +2,7 @@ import components.map.Map;
 import components.standard.Standard;
 
 /**
- *
+ * Kernal methods for the BudgetTracker component.
  */
 interface BudgetTrackerKernel extends Standard<BudgetTracker> {
 
