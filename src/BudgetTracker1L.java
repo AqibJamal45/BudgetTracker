@@ -177,8 +177,8 @@ public final class BudgetTracker1L extends BudgetTrackerSecondary {
         return spent;
     }
 
-    @Override
-    public String toString() {
-        return this.budget.toString();
-    }
+    // @Override
+    // public String toString() {
+    //     return this.budget.toString();
+    // }
 }

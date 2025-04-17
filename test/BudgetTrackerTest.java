@@ -4,14 +4,18 @@
  */
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import components.map.Map;
 
 /**
  *
  */
 
 public class BudgetTrackerTest {
+
     @Test
     public void testCreateNewRep() {
         BudgetTracker x = new BudgetTracker1L();
@@ -351,9 +355,42 @@ public class BudgetTrackerTest {
         eX.addTransaction("games", 50.00);
         x.addTransaction("rent", 1400.00);
         eX.addTransaction("rent", 1400.00);
-        boolean checkX = x.hasTransaction("food");
-        boolean checkEx = eX.hasTransaction("food");
-        assertEquals(checkEx, checkX);
+        Map.Pair<String, Double> remove = x.randomRemove();
+        boolean check = eX.hasTransaction(remove.key());
+        assertTrue(check);
+        String removeTwo = eX.removeTransaction(remove.key());
+        assertEquals(eX, x);
+        assertEquals(removeTwo, remove.key());
+    }
+
+    @Test
+    public void randomRemove2() {
+        BudgetTracker x = new BudgetTracker1L();
+        BudgetTracker eX = new BudgetTracker1L();
+        x.addTransaction("food", 90.00);
+        eX.addTransaction("food", 90.00);
+        x.addTransaction("games", 50.00);
+        eX.addTransaction("games", 50.00);
+        Map.Pair<String, Double> remove = x.randomRemove();
+        boolean check = eX.hasTransaction(remove.key());
+        assertTrue(check);
+        String removeTwo = eX.removeTransaction(remove.key());
+        assertEquals(eX, x);
+        assertEquals(removeTwo, remove.key());
+    }
+
+    @Test
+    public void randomRemove3() {
+        BudgetTracker x = new BudgetTracker1L();
+        BudgetTracker eX = new BudgetTracker1L();
+        x.addTransaction("food", 90.00);
+        eX.addTransaction("food", 90.00);
+        Map.Pair<String, Double> remove = x.randomRemove();
+        boolean check = eX.hasTransaction(remove.key());
+        assertTrue(check);
+        String removeTwo = eX.removeTransaction(remove.key());
+        assertEquals(eX, x);
+        assertEquals(removeTwo, remove.key());
     }
 
 }

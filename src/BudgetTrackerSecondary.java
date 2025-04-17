@@ -1,7 +1,7 @@
 import components.map.Map;
 
 /**
- *
+ * This is the absract class of the BudgetTracker compoenent.
  */
 public abstract class BudgetTrackerSecondary implements BudgetTracker {
 
@@ -67,6 +67,8 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
         BudgetTracker test = (BudgetTracker) o;
 
         boolean check = true;
+        BudgetTracker copy = this.newInstance();
+        BudgetTracker copyTwo = this.newInstance();
         while (test.budgetSize() != 0) {
             Map.Pair<String, Double> removed1 = this.randomRemove();
             Map.Pair<String, Double> removed2 = test.randomRemove();
@@ -76,9 +78,11 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
                 test.addTransaction(removed2.key(), removed2.value());
                 return false;
             }
-            this.addTransaction(removed1.key(), removed1.value());
-            test.addTransaction(removed2.key(), removed2.value());
+            copyTwo.addTransaction(removed1.key(), removed1.value());
+            copy.addTransaction(removed2.key(), removed2.value());
         }
+        this.transferFrom(copyTwo);
+        test.transferFrom(copy);
         return check;
     }
 }
