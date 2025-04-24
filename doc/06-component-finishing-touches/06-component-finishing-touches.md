@@ -307,18 +307,26 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+I think it helps me understand better what is actually happening under the hood
+of the component. It defiently helps me understand software devolopment a lot
+better better because you get a different perspective on software design looking at
+it from more of the clients perspective.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+I don't think it really cleared up big gaps on my knowledge but again I just got a
+whole new perspective on software design and how you can have different implementations
+for the same component like we have been doing the whole semester
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+There is defiently a lot more to learn about software design and I feel like
+doing the compoenent project really helped boost and solidify my knowledge
+at the same time. Going from like a 4/10 to like a 6/10. I still enjoy it because
+of how creative you have to be and takes critical thinking skills to code
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -326,29 +334,44 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+The biggest skill was probably designing the component and the brianstorming of what
+makes a compoenent good and reliable. Taking ideas from lectures from maybe when
+Jeremy ranted about why some components were terrible and learning from there
+I dont think I picked up any further new skills but just practicing and solidifying skills
+that I was already fmailiar with. For example most of this was doing implementations
+and writing contracts which I was already familiar with. This helped me gain
+the clients side of software and boost skills that I was familiar with
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- Kernal Implementation
+- Writing and designing contracts
+- Designing a component and brainstorming
+- Writing code
+- Testing
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I think it has boosted me to pursue software engineering, I really enjoyed this project
+because it encouraged me to think outside of the box to design a component, I look
+forward to diving more into software and design
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+Since I am doing software engineering, there is always going to be coding and implementing
+things, so I will keep on sharpening those skills. Along with the skill of being creative,
+and knowing how to design code to make it the most effiecient code. I do know a mentor
+from my scholarship program that I can ask for help, and my elder sibling also does
+software engineering so I have people to look to for help.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
